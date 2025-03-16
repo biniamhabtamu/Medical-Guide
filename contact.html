@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Medical Guide</title>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee, #fbc2eb);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Gradient Background Animation */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Contact Container */
+    .contact-container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* App Description */
+    .app-description {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    /* Icons Container */
+    .icons-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    /* Icon Styling */
+    .icon {
+      font-size: 2.5rem;
+      color: #fff;
+      background: #007bff;
+      padding: 15px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .icon:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Telegram Icon */
+    .telegram { background: #0088cc; }
+
+    /* Instagram Icon */
+    .instagram { background: #e4405f; }
+
+    /* Phone Icon */
+    .phone { background: #28a745; }
+
+    /* Fade-In Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-container">
+    <!-- App Description -->
+    <p class="app-description">
+        Welcome to <strong>Medical Guide</strong>, your trusted companion for medical education and professional growth. 
+        Our app is designed to support nurses, doctors, midwives, and all healthcare students in their journey to excellence. 
+        From detailed medical references and clinical guidelines to interactive tools and expert advice, we provide everything 
+        you need to enhance your knowledge and skills. Stay connected with us for the latest updates, study resources, 
+        and personalized guidance to help you succeed in your medical career!
+      </p>
+
+    <!-- Icons Container -->
+    <div class="icons-container">
+      <!-- Telegram -->
+      <a href="https://t.me/bh068" target="_blank" class="icon telegram">
+        <i class="bi bi-telegram"></i>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/biniamhabtamu320?utm_source=qr&igsh=MXU5NWY2NjM1eDZkNQ==" target="_blank" class="icon instagram">
+        <i class="bi bi-instagram"></i>
+      </a>
+
+      <!-- Phone -->
+      <a href="tel:+251994024681" class="icon phone">
+        <i class="bi bi-telephone"></i>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

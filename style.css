@@ -1,0 +1,185 @@
+/* Custom Styles */
+.icon-large {
+    font-size: 3rem;
+    color: #2575fc;
+    margin-bottom: 1rem;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #4a5568; /* Attractive gray color */
+    padding: 0.5rem 1rem; /* Adjust padding for better spacing */
+    width: 100%; /* Full width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    margin-top: 0; /* Ensure no margin from the top */
+    position: fixed; /* Fix navbar at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure navbar is above other content */
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center; /* Vertically center the logo */
+    z-index: 1001; /* Ensure logo is above navbar background */
+}
+
+.navbar-brand img {
+    height: 50px; /* Adjust logo height */
+    width: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Ensure the logo doesn't exceed navbar height */
+}
+
+/* Ensure the navbar toggler button is visible */
+.navbar-toggler {
+    border: none; /* Remove default border */
+    padding: 0.25rem 0.5rem; /* Add padding for better click area */
+    z-index: 1001; /* Ensure toggler is above navbar background */
+}
+
+.navbar-toggler-icon {
+    background-color: #fff; /* White color for the toggler icon */
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important; /* White text color */
+    font-size: 1.1rem; /* Larger font size */
+    margin: 0 0.5rem; /* Add spacing between links */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f0f0f0 !important; /* Light gray on hover */
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradient background */
+    height: 40vh; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 70px; /* Space for fixed navbar (adjust based on navbar height) */
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-title {
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.header-subtitle {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.header-cta {
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #2575fc;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.header-cta:hover {
+    background-color: #f0f0f0;
+}
+
+/* Main Content Styles */
+main {
+    margin-top: 80px; /* Add space between navbar and cards */
+    padding: 2rem 0; /* Add padding for better spacing */
+}
+
+/* Card Styles */
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+#searchInput {
+    border-radius: 25px 0 0 25px; /* Rounded left side */
+}
+
+#searchButton {
+    border-radius: 0 25px 25px 0; /* Rounded right side */
+    transition: background-color 0.3s ease;
+}
+
+#searchButton:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+.form-check {
+    margin-bottom: 0.5rem;
+}
+
+.form-check-input {
+    margin-right: 0.5rem;
+}
+
+.feedback {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 767.98px) {
+    .header-title {
+        font-size: 2rem;
+    }
+    .header-subtitle {
+        font-size: 1rem;
+    }
+    .navbar-brand img {
+        height: 40px; /* Smaller logo for mobile */
+    }
+    main {
+        margin-top: 60px; /* Adjust margin for smaller screens */
+    }
+}

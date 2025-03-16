@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Page</title>
+  <style>
+    /* General Styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee, #fbc2eb);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Gradient Background Animation */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Loading Container */
+    .loading-container {
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* App Logo */
+    .logo {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
+    }
+
+    /* Welcome Text */
+    .welcome-text {
+      font-size: 2.5rem;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      animation: slideIn 1.5s ease-in-out;
+    }
+
+    /* Bounce Animation for Logo */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Fade-In Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Slide-In Animation */
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="loading-container">
+    <!-- App Logo -->
+    <img src="logo-transparent.png" alt="App Logo" class="logo">
+    <!-- Welcome Message -->
+    <div class="welcome-text">Welcome to Medical Guide</div>
+  </div>
+
+  <script>
+    // Redirect to Home Page after 5 seconds
+    setTimeout(() => {
+      window.location.href = "home.html"; // Replace with your home page URL
+    }, 5000); // 5000 milliseconds = 5 seconds
+  </script>
+</body>
+</html>

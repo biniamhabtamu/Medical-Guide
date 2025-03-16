@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Page - Medical Guides</title>
+    <link rel="shortcut icon" href="logo-transparent.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo-transparent.png" alt="Logo" width="190" height="120" class="d-inline-block align-text-top me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="slide.html">Slide</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="video.html">Tutorial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Question Section -->
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="text-center mb-4">Medical Questions</h1>
+                <div id="questionContainer">
+                    <!-- Questions will be dynamically added here -->
+                </div>
+                <div class="text-center mt-4">
+                    <button id="submitButton" class="btn btn-primary btn-lg">Submit Answers</button>
+                </div>
+                <div id="scoreContainer" class="text-center mt-4">
+                    <h3>Score: <span id="score">0</span></h3>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- Custom JS for Question Page -->
+    <script>
+       const questions = [
+    {
+        question: "What is the primary function of the heart?",
+        options: ["Pump blood", "Digest food", "Filter air", "Produce hormones"],
+        correctAnswer: "Pump blood",
+    },
+    {
+        question: "Which of the following is a major risk factor for heart disease?",
+        options: ["High cholesterol", "Low blood sugar", "Excessive hydration", "Vitamin C deficiency"],
+        correctAnswer: "High cholesterol",
+    },
+    {
+        question: "What is the normal range for blood pressure in adults?",
+        options: ["90/60 mmHg", "120/80 mmHg", "140/90 mmHg", "160/100 mmHg"],
+        correctAnswer: "120/80 mmHg",
+    },
+    {
+        question: "Which type of cholesterol is considered 'bad'?",
+        options: ["HDL", "LDL", "VLDL", "Triglycerides"],
+        correctAnswer: "LDL",
+    },
+    {
+        question: "How many chambers does the human heart have?",
+        options: ["2", "3", "4", "5"],
+        correctAnswer: "4",
+    },
+    {
+        question: "What is the recommended weekly amount of moderate exercise for heart health?",
+        options: ["30 minutes", "90 minutes", "150 minutes", "300 minutes"],
+        correctAnswer: "150 minutes",
+    },
+    {
+        question: "Which food is most beneficial for heart health?",
+        options: ["Fried chicken", "Salmon", "White bread", "Soda"],
+        correctAnswer: "Salmon",
+    },
+    {
+        question: "What is a common symptom of a heart attack?",
+        options: ["Chest pain", "Stomach ache", "Blurred vision", "Joint pain"],
+        correctAnswer: "Chest pain",
+    },
+    {
+        question: "What is the leading cause of heart disease?",
+        options: ["Genetics", "Smoking", "High blood pressure", "All of the above"],
+        correctAnswer: "All of the above",
+    },
+    {
+        question: "Which of the following helps lower blood pressure?",
+        options: ["Reducing salt intake", "Eating more processed foods", "Drinking sugary beverages", "Sitting for long periods"],
+        correctAnswer: "Reducing salt intake",
+    },
+    {
+        question: "What is the main purpose of the coronary arteries?",
+        options: ["Carry blood to the lungs", "Supply blood to the heart muscle", "Filter blood", "Produce red blood cells"],
+        correctAnswer: "Supply blood to the heart muscle",
+    },
+    {
+        question: "Which condition is characterized by the hardening of the arteries?",
+        options: ["Atherosclerosis", "Arrhythmia", "Hypertension", "Cardiomyopathy"],
+        correctAnswer: "Atherosclerosis",
+    },
+    {
+        question: "What is the medical term for a heart attack?",
+        options: ["Myocardial infarction", "Cardiac arrest", "Angina", "Stroke"],
+        correctAnswer: "Myocardial infarction",
+    },
+    {
+        question: "Which of the following is a sign of good heart health?",
+        options: ["Low HDL cholesterol", "High resting heart rate", "Normal blood pressure", "High LDL cholesterol"],
+        correctAnswer: "Normal blood pressure",
+    },
+    {
+        question: "What is the role of omega-3 fatty acids in heart health?",
+        options: ["Increase LDL cholesterol", "Reduce inflammation", "Raise blood pressure", "Decrease HDL cholesterol"],
+        correctAnswer: "Reduce inflammation",
+    },
+    {
+        question: "Which of the following is NOT a symptom of heart failure?",
+        options: ["Shortness of breath", "Swelling in the legs", "Persistent cough", "Increased energy levels"],
+        correctAnswer: "Increased energy levels",
+    },
+    {
+        question: "What is the recommended daily limit for sodium intake to maintain heart health?",
+        options: ["500 mg", "1500 mg", "2300 mg", "5000 mg"],
+        correctAnswer: "2300 mg",
+    },
+    {
+        question: "Which of the following is a healthy resting heart rate for adults?",
+        options: ["40-60 bpm", "60-100 bpm", "100-120 bpm", "120-140 bpm"],
+        correctAnswer: "60-100 bpm",
+    },
+    {
+        question: "What is the primary cause of a stroke?",
+        options: ["Blocked or burst blood vessels in the brain", "High blood sugar", "Low cholesterol", "Excessive exercise"],
+        correctAnswer: "Blocked or burst blood vessels in the brain",
+    },
+    {
+        question: "Which lifestyle change is most effective in preventing heart disease?",
+        options: ["Quitting smoking", "Eating more processed foods", "Reducing physical activity", "Increasing alcohol consumption"],
+        correctAnswer: "Quitting smoking",
+    }
+];
+       let score = 0;
+
+// Display Questions
+function displayQuestions() {
+    const questionContainer = document.getElementById("questionContainer");
+    questionContainer.innerHTML = questions
+        .map((question, index) => `
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Question ${index + 1}: ${question.question}</h5>
+                    <div class="options">
+                        ${question.options
+                            .map(
+                                (option) => `
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="question${index}" value="${option}">
+                                    <label class="form-check-label">${option}</label>
+                                </div>
+                            `
+                            )
+                            .join("")}
+                    </div>
+                    <div class="feedback mt-2"></div>
+                </div>
+            </div>
+        `)
+        .join("");
+}
+
+// Check Answers
+function checkAnswers() {
+    const questionContainer = document.getElementById("questionContainer");
+    const feedbackElements = questionContainer.querySelectorAll(".feedback");
+
+    questions.forEach((question, index) => {
+        const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+        const feedbackElement = feedbackElements[index];
+
+        if (selectedOption) {
+            if (selectedOption.value === question.correctAnswer) {
+                feedbackElement.innerHTML = `<i class="bi bi-check-circle-fill text-success"></i> Correct!`;
+                score++;
+            } else {
+                feedbackElement.innerHTML = `<i class="bi bi-x-circle-fill text-danger"></i> Incorrect. The correct answer is: ${question.correctAnswer}`;
+            }
+        } else {
+            feedbackElement.innerHTML = `<i class="bi bi-exclamation-circle-fill text-warning"></i> Please select an answer.`;
+        }
+    });
+
+    // Update Score
+    document.getElementById("score").textContent = score;
+}
+
+// Event Listener for Submit Button
+document.getElementById("submitButton").addEventListener("click", checkAnswers);
+
+// Display Questions on Page Load
+displayQuestions();
+    </script>
+</body>
+</html>
